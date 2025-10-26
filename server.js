@@ -37,7 +37,7 @@ const client = new OpenAI();
 // });
 
 
-app.post('https://persona-backend-sigma.vercel.app/api/chat', async (req, res) => {
+app.post('/api/chat', async (req, res) => {
     try {
         const { messages } = req.body;
 
