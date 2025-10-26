@@ -4,13 +4,7 @@ import 'dotenv/config';
 import { OpenAI } from 'openai';
 
 const app = express();
-app.use(
-  cors({
-    origin: "https://persona-frontend-one.vercel.app",
-    methods: ["GET", "POST", "PUT", "DELETE"],
-    credentials: true,
-  })
-);
+app.use(cors());
 app.use(express.json());
 
 const client = new OpenAI();
