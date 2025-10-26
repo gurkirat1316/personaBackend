@@ -60,7 +60,8 @@ app.post('/api/chat', async (req, res) => {
         }
 
         const response = await client.chat.completions.create({
-            model: 'gpt-4o-mini',
+            // model: 'gpt-4o-mini',
+            model: "gemini-1.5"
             messages: messages
         });
 
