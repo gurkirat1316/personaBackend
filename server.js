@@ -9,7 +9,7 @@ app.use(express.json());
 
 const client = new OpenAI();
 
-// app.post('/api/chat', async (req, res) => {
+// app.post('https://persona-backend-g44r7hksv-gurkirats-projects-4f15d2d7.vercel.app/api/chat', async (req, res) => {
 //     try {
 //         const { personaPrompt, userMessage } = req.body;
 //         const response = await client.chat.completions.create({
