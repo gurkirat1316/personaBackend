@@ -7,9 +7,13 @@ const app = express();
 app.use(cors());
 app.use(express.json());
 
-const client = new OpenAI();
+// const client = new OpenAI();
+const client = new OpenAI({
+    apiKey: process.env.GEMINI_API_KEY,
+    baseURL: 'https://generativelanguage.googleapis.com/v1beta/openai/',
+});
 
-// app.post('https://persona-backend-g44r7hksv-gurkirats-projects-4f15d2d7.vercel.app/api/chat', async (req, res) => {
+// app.post('/api/chat', async (req, res) => {
 //     try {
 //         const { personaPrompt, userMessage } = req.body;
 //         const response = await client.chat.completions.create({
@@ -60,7 +64,8 @@ app.post('/api/chat', async (req, res) => {
         }
 
         const response = await client.chat.completions.create({
-            model: 'gpt-4o-mini',
+            // model: 'gpt-4o-mini',
+            model: 'gemini-2.0-flash',
             messages: messages
         });
 
